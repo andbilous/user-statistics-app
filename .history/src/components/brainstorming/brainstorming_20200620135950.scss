@@ -1,0 +1,48 @@
+.brainstorming {
+  background-image: url(/img/bg,);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.brainstorming-header {
+  font-size: 48px;
+  line-height: 59px;
+  color: #fff;
+  font-style: normal;
+  width: 98%;
+}
+.brainstorming-subheader {
+  font-size: 20px;
+  line-height: 142%;
+  font-weight: normal;
+  color: #fff;
+  font-style: normal;
+  margin-bottom: 32px;
+}
+
+.brainstorming-btn {
+  width: 154px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 8px;
+  color: #3a80ba;
+  font-size: 16px;
+line-height: 142%;
+text-align: center;
+padding: 17px 31px 16px 32px;
+}
+
+.mobile {
+  width: 321px;
+  height: 561px;
+  background-image: url(../../img/mobile.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-image {
+  position: relative;
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,33 @@
+.brainstorming {
+  background-image: url(../../img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.brainstorming-header {
+  font-size: 48px;
+  line-height: 59px;
+  color: #fff;
+  
+}
+.brainstorming-subheader {
+  font-size: 20px;
+  line-height: 142%;
+  font-weight: normal;
+  color: #fff;
+}
+
+.mobile {
+  width: 321px;
+  height: 561px;
+  background-image: url(../../img/mobile.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-image {
+  position: relative;
+  width: 100%;
+  display: block;
+}

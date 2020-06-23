@@ -1,0 +1,45 @@
+import React from 'react';
+import './reasons.scss';
+import { Container, Row, Col,Card } from 'reactstrap';
+
+
+const Reasons = () => {
+    return (
+      <section className='reasons'>
+      <Container>
+          <Row className="justify-content-center">
+          <Col className="col-lg-7 col-md-8">
+            <div className='section-heading text-center mb-5'>
+              <h2>Why small business owners love AppCo?</h2>
+              <p className='lead'>
+              Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!
+              </p>
+            </div>
+          </Col>
+          </Row>
+          <Row className="justify-content-center">
+            <Col className='col-lg-4 col-md'>
+              <Card className='text-center'>
+                Clean design.
+                Increase sales by showing true dynamics of your website.
+              </Card>
+            </Col>
+            <Col className='col-lg-4 col-md'>
+            <Card className='text-center'>
+                Secure data.
+                Build your online store’s trust using Social Proof & Urgency.
+              </Card>
+            </Col>
+            <Col className='col-lg-4 col-md'>
+            <Card className='text-center'>
+                Reti
+              </Card>
+            </Col>
+          </Row>
+          
+      </Container>
+      </section>
+    )
+};
+
+export default Reasons;
