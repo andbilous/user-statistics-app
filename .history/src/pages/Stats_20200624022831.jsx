@@ -113,6 +113,7 @@ const Stats = () => {
             postsPerPage={postsPerPage}
             totalPosts={totalPosts}
             setPage={fetchData}
+\\\
           />
         </Row>
       </Container>

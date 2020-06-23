@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {
@@ -38,7 +38,7 @@ const Charts = () => {
       .then((res) => {
         setData(res.data.data);
       });
-  };
+  });
 
   const handleChangeRange = () => {
     fetchData(new Date(fromDate), new Date(toDate));

@@ -17,7 +17,7 @@ const Brainstorming = () => {
               <p className='brainstorming-subheader lead'>
               Our design projects are fresh and simple and will benefit your business greatly. Learn more about our work!
               </p>
-              <button href='#' onClick={()=>{history.push('./users')}} className='brainstorming-btn'>Views stats</button>
+              <button href='#' onClick={()=>{history.push('./users')}} className='brainstorming-btn'>Views stats</a>
               </Col>
             <Col className="col-md-5 col-lg-5">
             <img alt='mobile' className='img-fluid' src='/img/mobile.png'/>
