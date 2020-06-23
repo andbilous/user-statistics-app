@@ -9,6 +9,7 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import Legend from "recharts/lib/component/Legend";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import "../App.scss";
@@ -80,7 +81,7 @@ const Charts = () => {
             </span>
           </Col>
         </Row>
-        <Row className="ml-3">
+        <Row>
           <Col className="d-flex justify-content-around mt-5">
             <h5>From</h5>
             <DayPickerInput onDayChange={(value) => setFromDate(value)} />
@@ -120,6 +121,7 @@ const Charts = () => {
               <XAxis dataKey="date" />
               <YAxis />
               <Tooltip />
+              {/* <Legend /> */}
               <Line
                 type="monotone"
                 dataKey="views"

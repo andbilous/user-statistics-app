@@ -80,8 +80,8 @@ const Charts = () => {
             </span>
           </Col>
         </Row>
-        <Row className="ml-3">
-          <Col className="d-flex justify-content-around mt-5">
+        <Row>
+          <Col className="d-flex justify-content-around mt-5 ml-9">
             <h5>From</h5>
             <DayPickerInput onDayChange={(value) => setFromDate(value)} />
             <h5>To</h5>

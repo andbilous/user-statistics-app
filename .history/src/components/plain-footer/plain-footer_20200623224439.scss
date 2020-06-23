@@ -1,21 +1,20 @@
 .plain-footer {
-  margin-top: auto;
+  margin-top:auto; 
   background-color: #1c3b55;
   width: 100%;
   height: 57px;
   color: #fff;
   padding: 17px 17px;
-  .span {
+  .span{
     font-size: 16px;
   }
-  .footer-title {
+  .footer-title{
     font-size: 24px;
     line-height: 29px;
   }
 }
 
-@media (max-width: 768px) {
-  .plain-footer {
-    height: 96px;
-  }
+@media (max-width: 768px) {}
+.plain-footer{
+  height: 96px;
 }
