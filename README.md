@@ -1,6 +1,7 @@
 How to start project:
+- Clone this repository
 
-
+Run : 
 ### `yarn && yarn start`
 
 Runs the app in the development mode.<br />
