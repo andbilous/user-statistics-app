@@ -7,6 +7,8 @@ const userStats=require('./users_statistic.json');
 const moment = require('moment');
 
 const app = express();
+const usersDataFromDatabase =[];
+const usersStatsDataFromDatabase =[];
 const port = process.env.PORT || 5000;
 let db = new sqlite3.Database(':UserData:', (err) => {
   if (err) {
@@ -15,13 +17,13 @@ let db = new sqlite3.Database(':UserData:', (err) => {
   console.log('Connected to the UserData SQlite database.');
 });
 
-let initialqueryUsers = `SELECT DISTINCT ID FROM users
+let initialQueryUsers = `SELECT DISTINCT ID FROM users
            ORDER BY id`;
 
-let initialqueryUsersStatistics = `SELECT DISTINCT ID  FROM users_statistic
+let initialQueryUsersStatistics = `SELECT DISTINCT ID  FROM users_statistic
            ORDER BY id`;
 
-db.all(initialqueryUsers, (err, rows) => {
+db.all(initialQueryUsers, (err, rows) => {
   if (err) {
     db.run(`
     CREATE TABLE IF NOT EXISTS users (
@@ -38,7 +40,7 @@ db.all(initialqueryUsers, (err, rows) => {
 
 
 
-db.all(initialqueryUsersStatistics, (err, rows) => {
+db.all(initialQueryUsersStatistics, (err, rows) => {
   if (err) {
     db.run(`
       CREATE TABLE IF NOT EXISTS users_statistic (
@@ -51,29 +53,33 @@ db.all(initialqueryUsersStatistics, (err, rows) => {
   }
 });
 
+db.serialize(function() {
+  let user_stats = db.prepare('INSERT OR REPLACE INTO users_statistic VALUES (?,?,?,?)');
+  userStats.forEach(item=>{
+    user_stats.run([item.user_id,item.date,item.page_views,item.clicks]);
+  })
+  user_stats.finalize();
+})
 
-let selectFromUsers = 'SELECT * FROM users';
 
-let selectFromUserStatistic = 'SELECT * FROM users_statistic';
+  db.serialize(function() {
+  let usersTable = db.prepare('INSERT OR REPLACE INTO users VALUES (?,?,?,?,?,?)');
+  users.forEach(item=>{
+    usersTable.run([item.id,item.first_name,item.last_name,item.email,item.gender,item.ip_address]);  
+  })
+  usersTable.finalize();
+})
 
+db.each("SELECT * FROM users", function(err, row) {
+  usersDataFromDatabase.push(row);
 
-db.each(selectFromUsers, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row);
-  });
 });
 
-db.each(selectFromUserStatistic, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row);
-  });
+db.each("SELECT * FROM users_statistic", function(err, row) {
+  usersStatsDataFromDatabase.push(row);
 });
+
+
 
 
 db.close((err) => {
